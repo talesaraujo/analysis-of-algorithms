@@ -2,19 +2,18 @@
 #include <stdlib.h>
 
 //The ADT representing edges of a weighted graph
-typedef struct edge {
+struct edge {
 	int *u, *v;
 	int weight;
 
-}Edge;
+};
 
 
 //ADT representing the Graph
-typedef struct graph {
-	int* vertices; 
-	Edge *edges;
-
-}Graph;
+struct graph {
+	int* V; 
+	edge *E;
+};
 
 
 Graph* buildGraph(int *V, Edge* E) {
@@ -56,4 +55,17 @@ int* setVertices(int Vm) {
 }
 
 
-int setEdges()
+Edge* setEdges(int Em, int* V) {
+/*
+	Em represents the number of total edges; this function returns
+	an array of weighted edges if vertices are on the 'set' V.
+*/
+	Edge* E;
+
+	E = (Edge*)malloc(Em*sizeof(Edge));
+
+	for (int i=0; i<Em; i++) {
+		// fill E array
+	}
+
+}
