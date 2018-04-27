@@ -1,20 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//The ADT representing edges of a weighted graph
 struct edge {
-	int *u, *v;
+//The ADT representing edges of a weighted graph
+	char u, v;
 	int weight;
-
 };
 
 
-//ADT representing the Graph
 struct graph {
+//ADT representing the Graph
 	int* V; 
 	edge *E;
 };
-
 
 Graph* buildGraph(int *V, Edge* E) {
 /* 
@@ -38,19 +36,19 @@ Graph* buildGraph(int *V, Edge* E) {
 }
 
 
-int* setVertices(int Vm) {
+char* setVertices(int Vm) {
 /* 
 	Here Vm represents the number of vertices. An array of 
 	this vertices is the output.
 */
-	int *V;
-	V = (int*)malloc(Vm*sizeof(int));
+	char *V;
+	V = (char*)malloc(Vm*sizeof(char));
 
 	for (int i=0; i<Vm; i++) {
-		printf("%iº Vertex\n", i);
-		scanf("%i", &V[i]);
+		printf("Enter %iº Vertex: ", i);
+		scanf("%c", &V[i]);
+		printf("\n");
 	}
-
 	return V;
 }
 
@@ -65,6 +63,12 @@ Edge* setEdges(int Em, int* V) {
 	E = (Edge*)malloc(Em*sizeof(Edge));
 
 	for (int i=0; i<Em; i++) {
+		printf("Enter ordered pair of %iº edge.\n");
+		printf("u: ");
+		scanf("%c");
+		scanf("%c: ");
+		scanf("")
+
 		// fill E array
 	}
 
