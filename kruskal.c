@@ -115,5 +115,6 @@ struct graph* buildGraph(int *V, Edge* E) {
 */
 
 void MakeSet(v) {
+	/*Disjoint set concept*/
 	
 }
