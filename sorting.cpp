@@ -1,15 +1,38 @@
 #include <iostream>
-#include<cmath>
+#include <cmath>
 
 void merge(int* A, int p, int q, int r) {
+    int i, j, k;
     int n1 = q - p + 1;
     int n2 = r - q;
+    int L[n1], R[n2];
 
-    
+    for (i = 0; i < n1; i++) {
+        L[i] = A[p + i - 1];
+    }
+    for (j = 0; j < n2; j++) {
+        R[j] = A[q + j];
+    }
 
-    //create array
+    j = 1;
+    i = j;
+    k = p;
 
+    while ((i != (n1+1)) && (j != (n2+1))) {
+        if (L[i] <= R[j]) {
+            A[k] = L[i];
+            i++;
+        }
+        else {
+            A[k] = R[j];
+            j++;
+        }
+        k++;
+    }
 
+    if (i == (n1+1)) {
+        for (int m = j)
+    }
 }
 
 
