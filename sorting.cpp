@@ -2,7 +2,7 @@
 #include <cmath>
 
 void merge(int* A, int p, int q, int r) {
-    int i, j, k;
+    int i, j, k, m;
     int n1 = q - p + 1;
     int n2 = r - q;
     int L[n1], R[n2];
@@ -14,11 +14,11 @@ void merge(int* A, int p, int q, int r) {
         R[j] = A[q + j];
     }
 
-    j = 1;
+    j = 0;
     i = j;
     k = p;
 
-    while ((i != (n1+1)) && (j != (n2+1))) {
+    while ((i != n1) && (j != n2)) {
         if (L[i] <= R[j]) {
             A[k] = L[i];
             i++;
@@ -30,8 +30,17 @@ void merge(int* A, int p, int q, int r) {
         k++;
     }
 
-    if (i == (n1+1)) {
-        for (int m = j)
+    if (i == n1) {
+        for (m = j; m<n2; m++) {
+            A[k] = R[m];
+            k++;
+        }
+    }
+    if (j == n2) {
+        for (m = i; m < n1; m++) {
+            A[k] = L[m];
+            k++;
+        }
     }
 }
 
