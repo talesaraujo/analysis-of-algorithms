@@ -68,22 +68,29 @@ void print_arr(int* A, int n) {
     std::cout << "[" ;
 
     for (i = 0; i < n; i++) {
-        std::cout << A[i] << ", " ;
+        if (i != (n-1))
+            std::cout << A[i] << ", " ;
+        else {
+            std::cout << A[i];
+        }
     }
 
     std::cout << "]" ;
 }
 
 int main(int argc, char const *argv[]){
-    int V[10] = {2, 4, 5, 7, 1, 2, 3, 6};
 
-    std::cout << "Unsorted array";
-    print_arr(V, 8);
+    int V[8] = {2, 4, 5, 7, 1, 2, 3, 6};
 
-    mergesort(V, 0, 7);
+    int A[8] = {14, 7, 3, 12, 9, 11, 6, 2};
 
-    std::cout << "Sorted array";
-    print_arr(V, 8);
+    std::cout << "Unsorted array\n";
+    print_arr(A, 8);
+
+    mergesort(A, 0, 7);
+
+    std::cout << "\nSorted array\n";
+    print_arr(A, 8);
 
     return 0;
 }
