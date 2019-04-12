@@ -53,7 +53,7 @@ void mergesort(int* A, int p, int r) {
     int q;
 
     if (p < r) { //Check for the base case
-        q = floor(p+r/2); // Divide step
+        q = floor((p+r)/2); // Divide step
 
         mergesort(A, p, q); // Conquer step
         mergesort(A, q+1, r); // Conquer step
@@ -62,7 +62,7 @@ void mergesort(int* A, int p, int r) {
 }
 
 
-void printarr(int* A, int n) {
+void print_arr(int* A, int n) {
     int i;
 
     std::cout << "[" ;
@@ -78,14 +78,12 @@ int main(int argc, char const *argv[]){
     int V[10] = {2, 4, 5, 7, 1, 2, 3, 6};
 
     std::cout << "Unsorted array";
-    printarr(V, 8);
+    print_arr(V, 8);
 
     mergesort(V, 0, 7);
 
     std::cout << "Sorted array";
-    printarr(V, 8);
-
-
+    print_arr(V, 8);
 
     return 0;
 }
