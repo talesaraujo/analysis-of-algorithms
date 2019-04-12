@@ -9,10 +9,10 @@ void merge(int* A, int p, int q, int r) {
 
     // Set auxiliar L and R arrays
     for (i = 0; i < n1; i++) {
-        L[i] = A[p + i - 1];
+        L[i] = A[p + i];
     }
     for (j = 0; j < n2; j++) {
-        R[j] = A[q + j];
+        R[j] = A[q + j + 1];
     }
 
     j = 0;
