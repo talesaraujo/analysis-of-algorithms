@@ -62,8 +62,29 @@ void mergesort(int* A, int p, int r) {
 }
 
 
+void printarr(int* A, int n) {
+    int i;
+
+    std::cout << "[" ;
+
+    for (i = 0; i < n; i++) {
+        std::cout << A[i] << ", " ;
+    }
+
+    std::cout << "]" ;
+}
+
 int main(int argc, char const *argv[]){
-    float n = 4.5;
+    int V[10] = {2, 4, 5, 7, 1, 2, 3, 6};
+
+    std::cout << "Unsorted array";
+    printarr(V, 8);
+
+    mergesort(V, 0, 7);
+
+    std::cout << "Sorted array";
+    printarr(V, 8);
+
 
 
     return 0;
