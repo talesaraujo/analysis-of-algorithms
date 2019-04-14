@@ -80,8 +80,6 @@ void print_arr(int* A, int n) {
 
 int main(int argc, char const *argv[]){
 
-    int V[8] = {2, 4, 5, 7, 1, 2, 3, 6};
-
     int A[8] = {14, 7, 3, 12, 9, 11, 6, 2};
 
     std::cout << "Unsorted array\n";
