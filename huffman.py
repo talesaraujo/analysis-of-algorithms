@@ -21,7 +21,7 @@ encode = 'Ana ama sua nana, sua mana e banana'
 
 def count_frequency(text, rel=True):
     """
-        Returns a dictionary with the frequencies for each character.
+        Returns a dictionary with the given frequency for each character.
     """
     frequencies = {}
     for char in text:
