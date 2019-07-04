@@ -27,10 +27,7 @@ def test():
 	starting_times = [1, 0, 1, 4, 2, 5, 3, 4]
 	finish_times = [3, 4, 2, 6, 9, 8, 5, 5]
 
-	activity_list = []
-
-	for i in range(0, 8):
-		activity_list.append(Activity(activity_names[i], starting_times[i], finish_times[i]))
+	activity_list = [Activity(activity_names[i], starting_times[i], finish_times[i]) for i in range(len(activity_names))]
 
 	selection = greedy_iterative_activity_selector(activity_list)
 
